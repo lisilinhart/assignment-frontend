@@ -1,41 +1,34 @@
+
+const regex = /^[a-zA-Z._%+-]+\.([a-zA-Z]{3})-(b|m)(\d{4})@(fh-salzburg.ac.at)$/;
+
 export function valid(email) {
-  // ewieser-linhart.mmt-m2016@fh-salzburg.ac.at
-  const REGEX = /^[a-zA-Z0-9._%+-]+@(fh-salzburg.ac.at)$/;
-  return REGEX.test(email);
+  return regex.test(email);
 }
 
 export function degreeProgram(email) {
-  if (valid(email)) {
-    let firstPart = email.split('@')[0];
-    let degreeAndYear = firstPart.split('.')[1];
-    let degree = degreeAndYear.split('-')[0];
-    return degree;
+  const parts = regex.exec(email);
+  if (parts) {
+    return parts[1].toUpperCase();
   }
-  return 'Not a valid email address';
+  return false;
 }
 
 export function level(email) {
-  if (valid(email)) {
-    let firstPart = email.split('@')[0];
-    let degreeAndYear = firstPart.split('.')[1];
-    let levelShort = degreeAndYear.split('-')[1].charAt(0);
-    let levelLong = levelShort === 'm' ? 'master' : 'bachelor';
-    return levelLong;
+  const parts = regex.exec(email);
+  if (parts) {
+    const theLevel = parts[2] === 'm' ? 'MA' : 'BA';
+    return theLevel;
   }
-  return 'Not a valid email address';
+  return false;
 }
 
 export function graduationYear(email) {
-  if (valid(email)) {
-    let graduation = 0;
-    let firstPart = email.split('@')[0];
-    let degreeAndYear = firstPart.split('.')[1];
-    let levelShort = degreeAndYear.split('-')[1].charAt(0);
-    let year = degreeAndYear.split('-')[1].slice(-4);
-    
-    if (levelShort === 'b') graduation = parseInt(year, 10) + 3;
-    else if (levelShort === 'm') graduation = parseInt(year, 10) + 2;
-    return graduation;
+  const parts = regex.exec(email);
+  if (parts) {
+    const level = parts[2];
+    let year = parseInt(parts[3], 10);
+    year += level === 'b' ? 3 : 2;
+    return year;
   }
-  return 'Not a valid email address';
+  return false;
 }
