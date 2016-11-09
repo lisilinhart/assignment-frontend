@@ -1,11 +1,11 @@
 {
-  "name": "01-modules",
+  "name": "02-router",
   "version": "1.0.0",
-  "description": "Second assignment frontend development 1",
+  "description": "Second Assignment for Frontend Development 1",
   "main": "index.js",
   "scripts": {
-    "start": "grunt",
-    "test": "mocha"
+    "build": "grunt",
+    "start": "grunt start"
   },
   "author": "Hannes Moser <hannes@impossiblearts.com>",
   "license": "MIT",
@@ -16,14 +16,16 @@
     "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
     "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-run": "^0.6.0",
     "handlebars": "^4.0.3",
-    "http-server": "^0.8.5",
+    "hbsfy": "^2.7.0",
+    "jquery": "^3.1.1",
     "load-grunt-tasks": "^3.3.0",
-    "mocha": "^3.1.2",
-    "open-cli": "^1.0.1",
-    "should": "^11.1.1",
-    "time-grunt": "^1.2.1"
+    "serve-static": "^1.11.1",
+    "time-grunt": "^1.2.1",
+    "uglifyify": "^3.0.4"
   }
 }
