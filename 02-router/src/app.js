@@ -1,24 +1,31 @@
-import $ from 'jquery'
-import router from './router'
+import Router from './router'
 import homeTpl from './templates/home.hbs'
 import contactTpl from './templates/contact.hbs'
+import playerTpl from './templates/player.hbs'
 import notFoundTpl from './templates/not-found.hbs'
 
-const $app = $('#app')
+const $app = document.querySelector('#app');
+const router = new Router();
 
 function index() {
-  $app.html(homeTpl())
+  $app.innerHTML = homeTpl()
 }
 
 function contact() {
-  $app.html(contactTpl())
+  $app.innerHTML = contactTpl()
+}
+
+function players(route) {
+  const name = route.substr(0, 1).toUpperCase() + route.substr(1)
+  $app.innerHTML = playerTpl({name: name});
 }
 
 function notFound() {
-  $app.html(notFoundTpl())
+  $app.innerHTML = notFoundTpl()
 }
 
-router('/', index)
-router('/contact', contact)
-router('*', notFound)
-router()
+router.route('/', index)
+router.route('/contact', contact)
+router.route('/players/:player', players) 
+router.route('*', notFound)
+router.init();
