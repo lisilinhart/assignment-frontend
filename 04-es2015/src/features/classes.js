@@ -11,4 +11,16 @@ export function es5(val) {
 }
 
 export function es6(val) {
+  class HelloWorld {
+    constructor(val) {
+      this.hello = val
+    }
+    
+    say() {
+      return this.hello
+    }
+  }
+
+  let hello = new HelloWorld(val)
+  return hello.say();
 }

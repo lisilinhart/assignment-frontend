@@ -36,4 +36,19 @@ export function es5() {
 }
 
 export function es6() {
+  const defaults = (x = 12) => x;
+
+  const rest = (x, ...more) => `${x},${more}`;
+
+  const spread = (array) => {
+    let [x = 0,y = 0,z = 0] = array
+    return x + y + z
+  }
+
+  return {
+    defaults: defaults,
+    rest: rest,
+    spread: spread
+  }
+  
 }
