@@ -4,6 +4,10 @@ export function es5(cb) {
   }, 1)
 }
 
-export function es6(cb) {
-  return new Promise((resolve, reject) => resolve(cb(null,10)));  
+export function es6() {
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve(10);
+    }, 1)
+  });
 }
