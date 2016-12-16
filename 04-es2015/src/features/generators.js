@@ -22,6 +22,5 @@ export function es6(n) {
       yield count += 1
     }
   }
-
   return counter(n)
 }
