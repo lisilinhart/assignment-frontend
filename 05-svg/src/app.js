@@ -6,6 +6,7 @@ import animationTpl from './templates/animation.hbs'
 import textTpl from './templates/text.hbs'
 import interactionTpl from './templates/interaction.hbs'
 import notFoundTpl from './templates/not-found.hbs'
+import Button from './Button'
 
 const app = document.getElementById('app')
 
@@ -30,7 +31,12 @@ function text() {
 }
 
 function interaction() {
-  app.innerHTML = interactionTpl()
+  app.innerHTML = interactionTpl();
+  let interactiveButton = new Button({
+                                  el: document.querySelector(".js-btn"),
+                                  initText: "Commit",
+                                  endText: "Commited"
+                                });
 }
 
 function notFound() {

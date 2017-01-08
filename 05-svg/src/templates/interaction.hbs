@@ -1,6 +1,50 @@
 <h3>Interaction</h3>
 <div class="row">
-  <div class="col-sm-12">
-    <img src="https://cdn-images-1.medium.com/max/1600/1*U7-kEh5rvHXD2TVIgdugWw.jpeg">
+  <div class="col-sm-4">
+    <div class="btn js-btn">
+      <svg viewBox="0 0 180 40">
+        <style type="text/css">
+            .front-rect, .back-rect {
+              rx: 10;
+            }
+            .back-rect {
+              fill: #2e7d32;
+            }
+            .front-rect {
+              fill: #9ccc65;
+              transition: fill 0.3s ease-out;
+            }
+            .btn text {
+              fill: #fff;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+              font-family: "Futura", "Gill Sans","Gill Sans MT",Calibri,sans-serif
+            }
+            .arrow {
+              fill: none;
+              stroke: #fff;
+              stroke-width: 2;
+            }
+            .bounding, .hit-area{
+              pointer-events:none;
+            }
+            .end-text {
+              opacity: 0;
+            }
+        </style>
+        <rect class="hit-area" x="179" width="1" height="40" fill="none"></rect>
+        <rect class="bounding" x="-140" y="-10" fill="none" height="60" width="320"></rect>
+        <g>
+          <rect class="back-rect" height="40" width="180" />
+          <text class="init-text" x="110" y="20" text-anchor="middle" alignment-baseline="central">Commit</text>
+        </g>
+        <g class="drag-box" transform="translate(-140)">
+          <rect class="front-rect" height="40" width="180" />
+          <polyline transform="translate(140)" class="arrow" points="18,15 25,20 18,25" />
+          <text class="end-text" x="90" y="20" text-anchor="middle" alignment-baseline="central">Commited</text>
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
+

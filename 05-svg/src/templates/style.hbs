@@ -3,8 +3,8 @@
 <h4>Text with Style</h4>
 <div class="row">
   <div class="col-sm-12">
-    <svg class="svg-style" viewBox="0 0 500 100">
-      <text y="20">Lorem ipsum <tspan fill="#ff0000">dolor</tspan> sit <tspan style="font-weight: bold">amet</tspan>.</text>
+    <svg class="svg-style" viewBox="0 0 500 50">
+      <text y="20" fill="#90a4ae" style="font-size:20px; font-family: Avenir; text-transform: uppercase;">It's a <tspan fill="#f8d203" style="letter-spacing: 0.1em; font-weight: bold">trap</tspan>!</text>
     </svg>
   </div>
 </div>
@@ -13,10 +13,11 @@
 <div class="row">
   <div class="col-sm-12">
     <svg class="svg-style" viewBox="0 0 500 100">
-      <pattern id="pattern" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45 50 50)">
-        <rect width="10" height="10"/>
-        <line stroke-width="2px" y2="10"/>
-        <animateTransform attributeName="patternTransform" type="translate" by="10" dur="1s" repeatCount="indefinite"/>
+      <pattern id="pattern" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="translate(1 0 0)">
+        <rect width='56' height='100' fill='#f8d203'/>
+        <path d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#fff629' stroke-width='2'/>
+        <path d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='#ffe503' stroke-width='2'/>
+        <animateTransform attributeName="patternTransform" type="translate" by="56" dur="1s" repeatCount="indefinite"/>
       </pattern>
       <rect width="400" height="100" fill="url(#pattern)"/>
     </svg>

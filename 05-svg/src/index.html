@@ -17,10 +17,6 @@
       font-size: 1em;
     }
 
-    #pattern rect {
-      fill: #ff0000;
-    }
-
     #pattern line {
       stroke: #ff6600;
     }
@@ -100,6 +96,21 @@
       animation: offsetAnim 4.2s ease-in-out infinite alternate;
     }
 
+    .btn > svg {
+      vertical-align:top;
+    }
+    .btn {
+      display: block;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      min-width: 120px;  
+      border: none;
+      text-align: center;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
     @-webkit-keyframes offsetAnim {
       0% {
         stroke-dashoffset: 0em;
@@ -140,6 +151,8 @@
     </div>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/utils/Draggable.min.js"></script>
 <script src="//localhost:35729/livereload.js"></script>
 <script src="/app.js"></script>
 </body>
